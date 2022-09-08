@@ -5,20 +5,27 @@ function ShopItem({ product, addToCart }) {
   return (
     <div>
       <div key={product.name} className="product-card">
+        <img
+          alt={product.name}
+          className="shop-product-image"
+          src={product.source}
+        ></img>
         <h3>{product.name}</h3>
-        <h4>{product.price}</h4>
+        <h4>${product.price}</h4>
         <button onClick={() => setQuantity(quantity - 1)}>-</button>
         <span>{quantity}</span>
         <button onClick={() => setQuantity(quantity + 1)}>+</button>
 
-        <button
-          id={product.name}
-          onClick={(e) => {
-            addToCart(e, quantity);
-          }}
-        >
-          Add to Cart
-        </button>
+        <div>
+          <button
+            id={product.name}
+            onClick={(e) => {
+              addToCart(e, quantity);
+            }}
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );

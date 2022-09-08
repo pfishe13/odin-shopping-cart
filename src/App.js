@@ -5,17 +5,25 @@ import Home from './Home';
 import Shop from './Shop';
 import Cart from './Cart';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import jordan1 from './images/jordan1.png';
+import jordan4 from './images/jordan4.png';
+import jordan11 from './images/jordan11.png';
+import kobe6 from './images/kobe6.png';
+import foamrunner from './images/foamrunner.png';
+import yeezy350 from './images/yeezy350.png';
+import nikegps from './images/nikegps.png';
+import yeezyslide from './images/yeezyslide.png';
 
 function App() {
   const [productArray, setProductArray] = useState([
-    { name: 'Jordan 1', price: 100, source: '' },
-    { name: 'Yeezy Foam Runner', price: 100, source: '' },
-    { name: 'Jordan 11', price: 100, source: '' },
-    { name: 'Nike General Purpose Shoe', price: 100, source: '' },
-    { name: 'Yeezy Slide', price: 100, source: '' },
-    { name: 'Jordan 4', price: 100, source: '' },
-    { name: 'Nike Kobe 6', price: 100, source: '' },
-    { name: 'Yeezy Boost 350 v2', price: 100, source: '' },
+    { name: 'Jordan 1', price: 100, source: jordan1 },
+    { name: 'Yeezy Foam Runner', price: 100, source: foamrunner },
+    { name: 'Jordan 11', price: 100, source: jordan11 },
+    { name: 'Nike General Purpose Shoe', price: 100, source: nikegps },
+    { name: 'Yeezy Slide', price: 100, source: yeezyslide },
+    { name: 'Jordan 4', price: 100, source: jordan4 },
+    { name: 'Nike Kobe 6', price: 100, source: kobe6 },
+    { name: 'Yeezy Boost 350 v2', price: 100, source: yeezy350 },
   ]);
 
   const [cartArray, setCartArray] = useState([]);
