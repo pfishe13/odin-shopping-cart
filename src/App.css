@@ -7,15 +7,28 @@ body {
   text-align: center;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
 h1 {
-  font-size: 12em;
+  font-size: 6em;
   font-family: 'Gochi Hand', cursive;
   color: #056cf2;
+  margin-bottom: 10px;
+}
+
+.home-page-title {
+  font-size: 12em;
 }
 
 nav {
   width: 100vw;
   position: absolute;
+  top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -31,7 +44,7 @@ ul {
   list-style: none;
 }
 
-.main-container {
+.home-container {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -50,5 +63,21 @@ ul {
 }
 
 .right {
+  background-color: #262626;
+}
+
+.main-container {
+  padding: 4vh 10vh;
+  margin-top: 10vh;
+}
+
+.main-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.product-card {
+  height: 200px;
   background-color: #262626;
 }

@@ -20,17 +20,17 @@ function App() {
 
   const [cartArray, setCartArray] = useState([]);
 
-  const addToCart = (e) => {
+  const addToCart = (e, quantityToAdd) => {
     let itemToAdd = findProduct(e.target.id);
     let alreadyInCart = inCart(itemToAdd);
 
     if (alreadyInCart === -1) {
       setCartArray((x) => [
         ...x,
-        (itemToAdd = { ...itemToAdd, ['quantity']: 1 }),
+        (itemToAdd = { ...itemToAdd, ['quantity']: quantityToAdd }),
       ]);
     } else {
-      cartArray[alreadyInCart].quantity += 1;
+      cartArray[alreadyInCart].quantity += quantityToAdd;
     }
   };
 

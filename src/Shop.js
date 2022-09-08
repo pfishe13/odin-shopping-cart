@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import ShopItem from './ShopItem';
 
 function Shop({ productArray, addToCart }) {
   return (
     <div className="main-container">
       <h1>Shop</h1>
-      <div>
+      <div className="main-product-grid">
         {productArray.map((product) => {
+          //   console.log(product.name);
           return (
-            <div key={product.name}>
-              <h3>{product.name}</h3>
-              <h4>{product.price}</h4>
-              <button id={product.name} onClick={addToCart}>
-                Add to Cart
-              </button>
-            </div>
+            <ShopItem
+              key={product.name}
+              product={product}
+              addToCart={addToCart}
+            />
           );
         })}
       </div>
