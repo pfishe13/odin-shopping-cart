@@ -28,14 +28,18 @@ function App() {
 
   const [cartArray, setCartArray] = useState([]);
 
-  const addToCart = (e, quantityToAdd) => {
+  const addToCart = (e, quantityToAdd, sizeToAdd) => {
     let itemToAdd = findProduct(e.target.id);
     let alreadyInCart = inCart(itemToAdd);
 
     if (alreadyInCart === -1) {
       setCartArray((x) => [
         ...x,
-        (itemToAdd = { ...itemToAdd, ['quantity']: quantityToAdd }),
+        (itemToAdd = {
+          ...itemToAdd,
+          ['quantity']: quantityToAdd,
+          ['size']: sizeToAdd,
+        }),
       ]);
     } else {
       cartArray[alreadyInCart].quantity += quantityToAdd;
@@ -53,9 +57,9 @@ function App() {
     const alreadyInCart = cartArray.findIndex(
       (item) => item.name === product.name
     );
-
     return alreadyInCart;
   };
+
   return (
     <Router>
       <Nav />
