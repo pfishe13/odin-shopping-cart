@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/odin-shopping-cart/static/css/main.f73aa102.css",
+    "main.js": "/odin-shopping-cart/static/js/main.0cb03b0d.js",
+    "static/media/jordan4.png": "/odin-shopping-cart/static/media/jordan4.f5c2be7be94dff93ac50.png",
+    "static/media/foamrunner.png": "/odin-shopping-cart/static/media/foamrunner.77f6a67839fb7e176045.png",
+    "static/media/jordan1.png": "/odin-shopping-cart/static/media/jordan1.d6d4a261f3644e58e1a8.png",
+    "static/media/jordan11.png": "/odin-shopping-cart/static/media/jordan11.a6239893404c3ed410df.png",
+    "static/media/kobe6.png": "/odin-shopping-cart/static/media/kobe6.3bf6649da010533d8d39.png",
+    "static/media/yeezy350.png": "/odin-shopping-cart/static/media/yeezy350.3bafcf5abe03bbf804d9.png",
+    "static/media/nikegps.png": "/odin-shopping-cart/static/media/nikegps.e111470c56ac7d805d04.png",
+    "static/media/yeezyslide.png": "/odin-shopping-cart/static/media/yeezyslide.f5cb1953d197a32bd123.png",
+    "index.html": "/odin-shopping-cart/index.html",
+    "main.f73aa102.css.map": "/odin-shopping-cart/static/css/main.f73aa102.css.map",
+    "main.0cb03b0d.js.map": "/odin-shopping-cart/static/js/main.0cb03b0d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f73aa102.css",
+    "static/js/main.0cb03b0d.js"
+  ]
+}
