@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Nav from './Nav';
 import Home from './Home';
@@ -15,7 +15,7 @@ import nikegps from './images/nikegps.png';
 import yeezyslide from './images/yeezyslide.png';
 
 function App() {
-  const [productArray, setProductArray] = useState([
+  const [productArray] = useState([
     { name: 'Jordan 1', price: 100, source: jordan1 },
     { name: 'Yeezy Foam Runner', price: 100, source: foamrunner },
     { name: 'Jordan 11', price: 100, source: jordan11 },
@@ -30,7 +30,6 @@ function App() {
 
   const updateCart = (e, quantityToAdd, sizeToAdd) => {
     let itemToAdd = findProduct(e.target.id);
-    console.log(e.target.id);
     // Get index of element in cartArray
     let alreadyInCart = inCart(itemToAdd, sizeToAdd);
 
@@ -39,21 +38,31 @@ function App() {
         ...x,
         (itemToAdd = {
           ...itemToAdd,
-          ['quantity']: quantityToAdd,
-          ['size']: sizeToAdd,
+          quantity: quantityToAdd,
+          size: sizeToAdd,
         }),
       ]);
     } else {
       alreadyInCart.quantity += quantityToAdd;
+      setCartArray([...cartArray]);
     }
   };
 
   const updateQuantity = (e, quantityToChangeTo, sizeToAdd) => {
     let itemToAdd = findProduct(e.target.id);
-    console.log(e.target.id);
     // Get index of element in cartArray
     let alreadyInCart = inCart(itemToAdd, sizeToAdd);
-    alreadyInCart.quantity = quantityToChangeTo;
+
+    if (quantityToChangeTo === 0) {
+      deleteFromCart(alreadyInCart);
+    } else {
+      alreadyInCart.quantity = quantityToChangeTo;
+    }
+  };
+
+  const deleteFromCart = (itemToDelete) => {
+    const newCartArray = cartArray.filter((item) => item !== itemToDelete);
+    setCartArray([...newCartArray]);
   };
 
   const findProduct = (searchName) => {
@@ -81,7 +90,7 @@ function App() {
 
   return (
     <Router>
-      <Nav />
+      <Nav cartArray={cartArray} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -91,7 +100,11 @@ function App() {
         <Route
           path="/cart"
           element={
-            <Cart cartArray={cartArray} updateQuantity={updateQuantity} />
+            <Cart
+              cartArray={cartArray}
+              updateQuantity={updateQuantity}
+              deleteFromCart={deleteFromCart}
+            />
           }
         />
       </Routes>

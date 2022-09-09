@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import SizeWheel from './SizeWheel';
 
 function ShopItem({ product, updateCart }) {

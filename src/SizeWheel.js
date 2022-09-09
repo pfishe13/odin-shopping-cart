@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 function SizeWheel({ changeSize }) {
   function changeBackground(e) {

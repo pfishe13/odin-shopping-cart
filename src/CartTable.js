@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import CartTableCell from './CartTableCell';
 
-function CartTable({ cartArray, updateQuantity }) {
+function CartTable({
+  cartArray,
+  updateQuantity,
+  deleteFromCart,
+  updateTotalPrice,
+}) {
   return (
     <table>
       <thead>
@@ -17,9 +21,12 @@ function CartTable({ cartArray, updateQuantity }) {
         {cartArray.map((item, index) => {
           return (
             <CartTableCell
+              key={index}
               item={item}
-              index={index}
+              //   index={index}
               updateQuantity={updateQuantity}
+              deleteFromCart={deleteFromCart}
+              updateTotalPrice={updateTotalPrice}
             />
           );
         })}

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import CartSize from './CartSize';
 
-function Nav() {
+function Nav({ cartArray }) {
   return (
     <nav>
       <Link to="/">
@@ -15,7 +16,9 @@ function Nav() {
           <li>Shop</li>
         </Link>
         <Link to="/cart">
-          <li>Cart</li>
+          <li>
+            Cart (<CartSize cartArray={cartArray} />)
+          </li>
         </Link>
       </ul>
     </nav>
