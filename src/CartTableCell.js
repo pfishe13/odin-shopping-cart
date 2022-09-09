@@ -19,7 +19,7 @@ function CartTableCell({
         <h3>{item.name}</h3>
       </td>
       <td>
-        <h4>{item.size}</h4>
+        <h3>{item.size}</h3>
       </td>
       <td>
         <button
@@ -32,9 +32,7 @@ function CartTableCell({
         >
           -
         </button>
-        <span>
-          <h4>{quantity}</h4>
-        </span>
+        <span>{quantity}</span>
         <button
           id={item.name}
           onClick={(e) => {
@@ -47,7 +45,7 @@ function CartTableCell({
         </button>
       </td>
       <td>
-        <h4>{quantity ? item.price * quantity : item.price}</h4>
+        <h3>{quantity ? item.price * quantity : item.price}</h3>
       </td>
     </tr>
   );

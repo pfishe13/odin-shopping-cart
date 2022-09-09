@@ -89,7 +89,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/odin-shopping-cart">
       <Nav cartArray={cartArray} />
       <Routes>
         <Route path="/" element={<Home />} />
