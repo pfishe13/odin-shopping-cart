@@ -7,7 +7,6 @@ function ShopItem({ product, addToCart }) {
 
   const changeSize = (e) => {
     setSize(e.target.textContent);
-    console.log('Current Size', size);
   };
 
   return (

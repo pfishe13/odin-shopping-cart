@@ -130,3 +130,8 @@ span {
   border: none;
   margin-top: 6px;
 }
+
+th,
+td {
+  padding: 15px;
+}

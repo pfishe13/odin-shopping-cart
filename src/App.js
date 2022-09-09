@@ -30,9 +30,11 @@ function App() {
 
   const addToCart = (e, quantityToAdd, sizeToAdd) => {
     let itemToAdd = findProduct(e.target.id);
-    let alreadyInCart = inCart(itemToAdd);
 
-    if (alreadyInCart === -1) {
+    // Get index of element in cartArray
+    let alreadyInCart = inCart(itemToAdd, sizeToAdd);
+
+    if (alreadyInCart === null) {
       setCartArray((x) => [
         ...x,
         (itemToAdd = {
@@ -42,7 +44,7 @@ function App() {
         }),
       ]);
     } else {
-      cartArray[alreadyInCart].quantity += quantityToAdd;
+      alreadyInCart.quantity += quantityToAdd;
     }
   };
 
@@ -53,11 +55,20 @@ function App() {
     return productArray[index];
   };
 
-  const inCart = (product) => {
-    const alreadyInCart = cartArray.findIndex(
-      (item) => item.name === product.name
-    );
-    return alreadyInCart;
+  const inCart = (product, sizeToAdd) => {
+    const indexes = [];
+    for (let i = 0; i < cartArray.length; i += 1) {
+      if (cartArray[i].name === product.name) {
+        indexes.push(cartArray[i]);
+      }
+    }
+
+    for (let i = 0; i < indexes.length; i += 1) {
+      if (indexes[i].size === sizeToAdd) {
+        return indexes[i];
+      }
+    }
+    return null;
   };
 
   return (

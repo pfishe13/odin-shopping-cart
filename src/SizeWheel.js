@@ -46,6 +46,7 @@ function SizeWheel({ changeSize }) {
           9.5
         </li>
         <li
+          style={{ textDecoration: 'underline' }}
           onClick={(e) => {
             changeSize(e);
             changeBackground(e);

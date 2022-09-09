@@ -7,7 +7,6 @@ function Shop({ productArray, addToCart }) {
       <h1>Shop</h1>
       <div className="main-product-grid">
         {productArray.map((product) => {
-          //   console.log(product.name);
           return (
             <ShopItem
               key={product.name}
