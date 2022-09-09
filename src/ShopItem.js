@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SizeWheel from './SizeWheel';
 
-function ShopItem({ product, addToCart }) {
+function ShopItem({ product, updateCart }) {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState(10);
 
@@ -28,7 +28,7 @@ function ShopItem({ product, addToCart }) {
           <button
             id={product.name}
             onClick={(e) => {
-              addToCart(e, quantity, size);
+              updateCart(e, quantity, size);
             }}
           >
             Add to Cart

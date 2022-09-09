@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ShopItem from './ShopItem';
 
-function Shop({ productArray, addToCart }) {
+function Shop({ productArray, updateCart }) {
   return (
     <div className="main-container">
       <h1>Shop</h1>
@@ -11,7 +11,7 @@ function Shop({ productArray, addToCart }) {
             <ShopItem
               key={product.name}
               product={product}
-              addToCart={addToCart}
+              updateCart={updateCart}
             />
           );
         })}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CartTable from './CartTable';
 
-function Cart({ cartArray }) {
+function Cart({ cartArray, updateQuantity }) {
   const getCartItemLabel = () => {
     if (cartArray.length === 0) return 'Empty';
     if (cartArray.length === 1) return '1 item';
@@ -22,7 +22,7 @@ function Cart({ cartArray }) {
       )}
       {cartArray.length > 0 && (
         <div>
-          <CartTable cartArray={cartArray} />
+          <CartTable cartArray={cartArray} updateQuantity={updateQuantity} />
         </div>
       )}
     </div>

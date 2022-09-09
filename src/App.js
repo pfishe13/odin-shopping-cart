@@ -28,9 +28,9 @@ function App() {
 
   const [cartArray, setCartArray] = useState([]);
 
-  const addToCart = (e, quantityToAdd, sizeToAdd) => {
+  const updateCart = (e, quantityToAdd, sizeToAdd) => {
     let itemToAdd = findProduct(e.target.id);
-
+    console.log(e.target.id);
     // Get index of element in cartArray
     let alreadyInCart = inCart(itemToAdd, sizeToAdd);
 
@@ -46,6 +46,14 @@ function App() {
     } else {
       alreadyInCart.quantity += quantityToAdd;
     }
+  };
+
+  const updateQuantity = (e, quantityToChangeTo, sizeToAdd) => {
+    let itemToAdd = findProduct(e.target.id);
+    console.log(e.target.id);
+    // Get index of element in cartArray
+    let alreadyInCart = inCart(itemToAdd, sizeToAdd);
+    alreadyInCart.quantity = quantityToChangeTo;
   };
 
   const findProduct = (searchName) => {
@@ -78,9 +86,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/shop"
-          element={<Shop productArray={productArray} addToCart={addToCart} />}
+          element={<Shop productArray={productArray} updateCart={updateCart} />}
         />
-        <Route path="/cart" element={<Cart cartArray={cartArray} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart cartArray={cartArray} updateQuantity={updateQuantity} />
+          }
+        />
       </Routes>
     </Router>
   );
