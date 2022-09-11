@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartSize from './CartSize';
 import CartTable from './CartTable';
@@ -6,7 +6,7 @@ import CartTable from './CartTable';
 function Cart({ cartArray, updateQuantity, deleteFromCart }) {
   const [totalPrice, setTotalPrice] = useState(0);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     updateTotalPrice();
   });
 
